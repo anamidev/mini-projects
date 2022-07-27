@@ -16,7 +16,7 @@ export default function Home() {
                 </header>
                 
                 <section>
-                    <Link href="/posts/first-post">
+                    <Link href="/posts/1">
                         <a>
                             <article>
                                 <h3>First post header</h3>
