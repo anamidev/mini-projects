@@ -1,5 +1,5 @@
 import Layout from "../../components/Layout/Layout";
-import style from "./clock.module.css";
+import style from "../../styles/clock.module.css";
 import {useEffect, useRef} from "react";
 
 export default function Clock() {
