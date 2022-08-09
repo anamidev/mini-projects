@@ -9,6 +9,11 @@ export default function Home() {
                     <a>Clock</a>
                 </Link>
             </section>
+            <section>
+                <Link href="./projects/css-variables">
+                    <a>CSS Variables</a>
+                </Link>
+            </section>
         </Layout>
     )
 }
