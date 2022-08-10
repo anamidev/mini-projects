@@ -46,7 +46,7 @@
     background: grey;
     position: absolute;
     border-radius: 50%;
-    top: 47.9%;
+    top: 47%;
     left: 47%;
 }
 
@@ -55,7 +55,7 @@
     height: 6px;
     background: black;
     position: absolute;
-    top: 50%;
+    top: 49.5%;
     transform-origin: 100%;
     transition: all 0.2s;
     transition-timing-function: cubic-bezier(0.16, 1.93, 0.76, 0.73);
