@@ -69,8 +69,8 @@
     font-size: 3em;
 }
 
-.panel1 { background-image:url('../public/parrots-lovebirds.png'); }
-.panel2 { background-image:url('../public/parrots-cocktail.png'); }
+.panel1 { background-image:url('../public/parrots-lovebird.png'); }
+.panel2 { background-image:url('../public/parrots-cockatiel.png'); }
 .panel3 { background-image:url('../public/parrots-aratinga.png'); }
 .panel4 { background-image:url('../public/parrots-ringed.png'); }
 .panel5 { background-image:url('../public/parrots-caique.png'); }
