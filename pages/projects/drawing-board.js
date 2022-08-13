@@ -34,7 +34,11 @@ export default function DrawingBoard() {
     const draw = (e) => {
         if (!isDrawing) return;
         
-        points.push({x: e.clientX, y: e.clientY});
+        if (e._reactName === 'onTouchMove') {
+            points.push({x: e.touches[0].clientX, y: e.touches[0].clientY})
+        } else {
+            points.push({x: e.clientX, y: e.clientY});
+        }
         
         ctx.strokeStyle = `hsla(${hue}, 100%, 50%, 0.25)`;
         ctx.beginPath();
@@ -79,6 +83,9 @@ export default function DrawingBoard() {
                         onMouseMove={draw}
                         onMouseDown={startDraw}
                         onMouseUp={endDraw}
+                        onTouchStart={startDraw}
+                        onTouchMove={draw}
+                        onTouchEnd={endDraw}
                         width={canvasSize.width}
                         height={canvasSize.height}>
                 </canvas>
