@@ -26,6 +26,11 @@ export default function Home() {
                         <a>Drawing board</a>
                     </Link>
                 </div>
+                <div>
+                    <Link href="./projects/./custom-video-player">
+                        <a>Custom Video player</a>
+                    </Link>
+                </div>
             </section>
         </Layout>
     )
