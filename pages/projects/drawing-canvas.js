@@ -2,7 +2,7 @@ import Layout from "../../components/Layout/Layout";
 import {useEffect, useRef, useState} from "react";
 import styles from "../../styles/drawing-board.module.css";
 
-export default function DrawingBoard() {
+export default function DrawingCanvas() {
     const canvas = useRef();
     const [canvasSize, setCanvasSize] = useState({
         width: 800,
