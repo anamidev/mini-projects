@@ -1,4 +1,3 @@
-import Layout from "../../components/Layout/Layout";
 import {useEffect, useRef, useState} from "react";
 import styles from "../../styles/drawing-board.module.css";
 
@@ -77,7 +76,7 @@ export default function DrawingCanvas() {
     }, [canvasSize])
     
     return (
-        <Layout title={'Drawing Board'}>
+        <>
             <section className={styles.container}>
                 <canvas ref={canvas}
                         onMouseMove={draw}
@@ -90,6 +89,6 @@ export default function DrawingCanvas() {
                         height={canvasSize.height}>
                 </canvas>
             </section>
-        </Layout>
+        </>
     )
 }

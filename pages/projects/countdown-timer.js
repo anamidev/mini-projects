@@ -1,10 +1,9 @@
-import Layout from "../../components/Layout/Layout";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 export default function CountdownTimer() {
     const [timerDisplay, setTimerDisplay] = useState('');
     const [endTime, setEndTime] = useState('');
-    const [countdown, setCountdown] = useState(null);
+    let countdown = null;
     
     const timersList = [
         {sec: 20, label: '20 Secs'},
@@ -21,8 +20,8 @@ export default function CountdownTimer() {
         const then = now + seconds * 1000;
         displayTimeLeft(seconds);
         displayEndTime(then);
-        
-        setCountdown(setInterval(() => {
+    
+        countdown = (setInterval(() => {
             const secondsLeft = Math.round((then - Date.now()) / 1000);
             if (secondsLeft < 0) {
                 clearInterval(countdown);
@@ -52,35 +51,34 @@ export default function CountdownTimer() {
         timer(e.target.minutes.value * 60);
         e.target.reset();
     }
+    
+    useEffect(() => () => clearInterval(countdown), [])
     return (
         <>
-            <Layout title={'Countdown Timer'}>
-                <div className="timer">
-                    <div className="timer__controls">
-                        {timersList.map((el) => (
-                            <button key={el.label}
-                                    className="timer__button"
-                                    onClick={() => timer(el.sec)}>
-                                {el.label}
-                            </button>
-                        ))}
-                        <form name="customForm" id="custom"
-                              onSubmit={submitMinutes}>
-                            <input type="text" name="minutes" placeholder="Enter Minutes" />
-                        </form>
-                    </div>
-                    <div className="display">
-                        <h1 className="display__time-left">{timerDisplay}</h1>
-                        <p className="display__end-time">{endTime}</p>
-                    </div>
+            <div className="timer">
+                <div className="timer__controls">
+                    {timersList.map((el) => (
+                        <button key={el.label}
+                                className="timer__button"
+                                onClick={() => timer(el.sec)}>
+                            {el.label}
+                        </button>
+                    ))}
+                    <form name="customForm" id="custom"
+                          onSubmit={submitMinutes}>
+                        <input type="text" name="minutes" placeholder="Enter Minutes" />
+                    </form>
                 </div>
-            </Layout>
+                <div className="display">
+                    <h1 className="display__time-left">{timerDisplay}</h1>
+                    <p className="display__end-time">{endTime}</p>
+                </div>
+            </div>
             
             <style jsx global>{`
                 html {
                     box-sizing: border-box;
                     font-size: 10px;
-                    background: linear-gradient(25deg,#32b77b 0%,#17563a 50%,#000 100%);
                 }
                 
                 *, *:before, *:after {
@@ -91,6 +89,7 @@ export default function CountdownTimer() {
                     margin: 0;
                     text-align: center;
                     font-family: 'Inconsolata', monospace;
+                    background: linear-gradient(25deg,#32b77b 0%,#17563a 50%,#000 100%);
                 }
                 
                 .display__time-left {

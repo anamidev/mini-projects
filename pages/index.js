@@ -1,34 +1,32 @@
 import Link from "next/link";
-import Layout from "../components/Layout/Layout";
 
 export default function Home() {
     return (
         <>
-            <Layout>
-                <section>
-                    <div>
-                        <Link href="./projects/drawing-canvas">
-                            <a>Drawing canvas</a>
-                        </Link>
-                    </div>
-                    <div>
-                        <Link href="./projects/countdown-timer">
-                            <a>Countdown Timer</a>
-                        </Link>
-                    </div>
-                </section>
-            </Layout>
+            <section>
+                <div>
+                    <Link href="./projects/drawing-canvas">
+                        <a>Drawing canvas</a>
+                    </Link>
+                </div>
+                <div>
+                    <Link href="./projects/countdown-timer">
+                        <a>Countdown Timer</a>
+                    </Link>
+                </div>
+                <div>
+                    <Link href="./projects/whack-a-mole">
+                        <a>Whack A Mole</a>
+                    </Link>
+                </div>
+            </section>
             
             <style jsx global>{`
                 body {
                     background: black;
                     font-size: 24px;
-                }
-                
-                :root{
-                    font-family:sans-serif;
-                    font-size:20px;
                     margin:0 5%;
+                    font-family:sans-serif;
                 }
                 p {
                     padding:10px;
@@ -59,7 +57,7 @@ export default function Home() {
                     height: 1em;
                     transform: rotate(2deg);
                     opacity: 0.5;
-                    border-radius: 0.25em;
+                    border-radius: 0.35em;
                 }
                 
                 a:hover:after {
@@ -75,9 +73,9 @@ export default function Home() {
                     position: absolute;
                     width: 100%;
                     height: 1em;
-                    transform: rotate(-1deg);
+                    transform: rotate(1deg);
                     opacity: 0.5;
-                    border-radius: 0.25em;
+                    border-radius: 0.35em;
                 }
             `}</style>
         </>
