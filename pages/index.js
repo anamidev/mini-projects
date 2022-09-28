@@ -19,6 +19,11 @@ export default function Home() {
                         <a>Whack A Mole</a>
                     </Link>
                 </div>
+                <div>
+                    <Link href="./projects/webcam-filter">
+                        <a>Webcam Filter</a>
+                    </Link>
+                </div>
             </section>
             
             <style jsx global>{`
