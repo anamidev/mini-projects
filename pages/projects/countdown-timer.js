@@ -3,8 +3,7 @@ import {useEffect, useState} from "react";
 export default function CountdownTimer() {
     const [timerDisplay, setTimerDisplay] = useState('');
     const [endTime, setEndTime] = useState('');
-    let countdown = null;
-    
+    const [countdown, setCountdown] = useState(null);
     const timersList = [
         {sec: 20, label: '20 Secs'},
         {sec: 300, label: 'Work 5'},
@@ -21,7 +20,7 @@ export default function CountdownTimer() {
         displayTimeLeft(seconds);
         displayEndTime(then);
     
-        countdown = (setInterval(() => {
+        setCountdown(setInterval(() => {
             const secondsLeft = Math.round((then - Date.now()) / 1000);
             if (secondsLeft < 0) {
                 clearInterval(countdown);
@@ -52,7 +51,7 @@ export default function CountdownTimer() {
         e.target.reset();
     }
     
-    useEffect(() => () => clearInterval(countdown), [])
+    useEffect(() => () => clearInterval(countdown), [countdown])
     return (
         <>
             <div className="timer">
