@@ -1,5 +1,5 @@
 import {useEffect, useRef, useState} from "react";
-import styles from "../../styles/drawing-board.module.css";
+import styles from "../../styles/drawing-canvas.module.css";
 
 export default function DrawingCanvas() {
     const canvas = useRef();
