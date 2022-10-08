@@ -28,34 +28,33 @@ export default function Home() {
             
             <style jsx global>{`
                 body {
-                    background: black;
+                    background: #18171c;
                     font-size: 24px;
                     margin:0 5%;
-                    font-family:sans-serif;
-                }
-                p {
-                    padding:10px;
-                    font-size: 35px;
+                    font-family: 'Roboto mono', monospace;
+                    color: #a29d9d;
                 }
                 
                 a {
                     text-decoration: none;
-                    color: #2fe1b0;
+                    color: #F9F1F0;
+                    transition: all 0.125s linear;
                 }
                 
                 a:hover {
                     position: relative;
                     padding: 0 5px;
+                    color: #e3a59d;
                 }
                 
                 a:hover:before {
                     content: "";
                     z-index: -1;
                     left: 0em;
-                    top: 0em;
+                    top: 0.2em;
                     border-width: 2px;
                     border-style: solid;
-                    border-color: #8fff00;
+                    border-color: #e3a59d;
                     position: absolute;
                     border-right-color: transparent;
                     width: 100%;
@@ -69,10 +68,10 @@ export default function Home() {
                     content: "";
                     z-index: -1;
                     left: 0em;
-                    top: 0em;
+                    top: 0.2em;
                     border-width: 2px;
                     border-style: solid;
-                    border-color: #8fff00;
+                    border-color: #e3a59d;
                     border-left-color: transparent;
                     border-top-color: transparent;
                     position: absolute;
